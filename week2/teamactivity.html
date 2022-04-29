@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Kathleen Moore">
+    <meta name="description" content="Portfolio for Kathleen Moore in WDD 330: Web Frontend Development at Brigham Young University - Idaho"/>
+    <title>Team 2 Activity - Calculator</title> 
+    <script>
+      function totalNum() {
+          let sum = 0;
+          let inputNum = document.querySelector("#inputNum").value
+          let num = parseInt(inputNum)
+          for (let i=1; i <= num; i++) {
+              sum += i;
+          }
+      document.getElementById('result').innerHTML = sum;
+      }
+  </script>
+</head>
+<body>
+  <header>
+      <h1>Calculator</h1>
+  </header>
+<main>
+  
+  <p>Enter a Number: <input id='inputNum' type="text" pattern="[0-9]+" required placeholder="Pick a number..."></input></p>
+      <button onclick="totalNum()">Calculate</button>
+  <div id="result"></div>
+
+  
+</main>
+<footer>
+     
+</footer>
+
+</body>
+</html>
