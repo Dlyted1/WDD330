@@ -90,6 +90,11 @@
        return -1;
      }
     });
+   // shorter way to write the above code:
+      // const ordered = inventors.sort((firstPerson, secondPerson) => firstPerson.year > secondPerson.year ? 1 : -1);
+
+    // console.table(ordered)
+
 // Array.prototype.reduce()
 // 4. How many years did all the inventors live?
 
