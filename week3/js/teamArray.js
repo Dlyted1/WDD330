@@ -133,7 +133,7 @@
       return aLast > bLast ? 1 : -1;
     });
 
-    //console.log(alpha);
+    console.log(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
@@ -151,7 +151,8 @@
         'car',
         'van',
         'car',
-        'truck'
+        'truck',
+        'pogostick'
       ];
 
       const transportation = data.reduce(function(obj, item) {
