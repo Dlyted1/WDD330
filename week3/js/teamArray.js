@@ -104,7 +104,14 @@
     // console.log(totalYears);
 
 // 5. Sort the inventors by years lived
+    const oldest = inventors.sort(function(firstPerson, secondPerson) {
+      const lastGuy = firstPerson.passed - firstPerson.year;
+      const nextGuy = secondPerson.passed - secondPerson.year;
+      return lastGuy > nextGuy ? -1 : 1;
+    })
 
+    // console.table(oldest)
+    
 // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
       // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
