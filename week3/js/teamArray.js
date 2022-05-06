@@ -2,7 +2,7 @@
       // ## Array Cardio Day 1
 
       // Some data we can work with
-
+// object
       const inventors = [
         { first: 'Albert', last: 'Einstein', year: 1879, passed: 1955 },
         { first: 'Isaac', last: 'Newton', year: 1643, passed: 1727 },
@@ -17,7 +17,7 @@
         { first: 'Lise', last: 'Meitner', year: 1878, passed: 1968 },
         { first: 'Hanna', last: 'Hammarström', year: 1829, passed: 1909 }
       ];
-
+//string array
       const people = [
         'Beck, Glenn',
         'Becker, Carl',
@@ -62,31 +62,50 @@
         'Blake, William'
       ];
 
-      // Array.prototype.filter()
-      // 1. Filter the list of inventors for those who were born in the 1500's
+// Array.prototype.filter()
+// 1. Filter the list of inventors for those who were born in the 1500's
+    const fifteen = inventors.filter(function(inventor) {
+      if inventor.year >= 1500 && inventor.year < 1600) {
+        return true; // keep it
+      }
+    }) 
+     // shorter way to write the above code:
+     // const fifteen = inventors.filter(inventor => (inventor.year >= 1500 && inventor.year < 1600))
 
-      // Array.prototype.map()
-      // 2. Give us an array of the inventors' first and last names
+    // to check console on above
+      //  console.table(fifteen);
 
-      // Array.prototype.sort()
-      // 3. Sort the inventors by birthdate, oldest to youngest
+// Array.prototype.map()
+// map will create a new array from old but length always stays the same 
+// 2. Give us an array of the inventors' first and last names
+    const fullnames = inventors.map(inventor => `${inventor.first} ${$inventor.last}`);
+      // console.log(fullnames);
 
-      // Array.prototype.reduce()
-      // 4. How many years did all the inventors live?
+// Array.prototype.sort()
+// 3. Sort the inventors by birthdate, oldest to youngest
+    const ordered = inventors.sort(function(firstPerson, secondPerson){
+     if(firstPerson.year > secondPerson.year) {
+       return 1;
+     } else {
+       return -1;
+     }
+    });
+// Array.prototype.reduce()
+// 4. How many years did all the inventors live?
 
-      // 5. Sort the inventors by years lived
+// 5. Sort the inventors by years lived
 
-      // 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
+// 6. create a list of Boulevards in Paris that contain 'de' anywhere in the name
       // https://en.wikipedia.org/wiki/Category:Boulevards_in_Paris
       // goto the link above and open the console. Paste the following two lines in.  That will create a list of links in memory that you can reference through the console. Use that list to finish the problem.
       // const category = document.querySelector('.mw-category');
       // const links = Array.from(category.querySelectorAll('a'));
 
-      // 7. sort Exercise
-      // Sort the people alphabetically by last name
+// 7. sort Exercise
+// Sort the people alphabetically by last name
 
-      // 8. Reduce Exercise
-      // Sum up the instances of each of these
+// 8. Reduce Exercise
+// Sum up the instances of each of these
       const data = [
         'car',
         'car',
