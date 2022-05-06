@@ -4,7 +4,23 @@
     { name: "Wonder Woman",realName: "Diana Prince" },
     { name: "Batman",realName: "Bruce Wayne" },
 ];
+
+// View Object
+const view = {
+    score: document.querySelector('#score strong'),
+    question: document.getElementById('question'),
+    result: document.getElementById('result'),
+    info: document.getElementById('info'),
+    render(target,content,attributes) {
+        for(const key in attributes) {
+            target.setAttribute(key, attributes[key]);
+        }
+        target.innerHTML = content;
+    }
+};
+
 // placing them inside an object called game that will be the namespace. This means that any references to the functions need to be replaced with game.function() outside the object or this.function() inside the object. //
+// Game Object
 const game = {
   start(quiz){
       this.questions = [...quiz];
@@ -19,22 +35,26 @@ const game = {
   },
   ask(){
       const question = `What is ${this.question.name}'s real name?`;
+      view.render(view.question,question);
       const response =  prompt(question);
       this.check(response);
   },
   check(response){
       const answer = this.question.realName;
       if(response === answer){
+      view.render(view.result,'Correct!',{'class':'correct'});
       alert('Correct!');
       this.score++;
+      view.render(view.score,this.score);
       } else {
+      view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
       alert(`Wrong! The correct answer was ${answer}`);
       }
   },
   gameOver(){
-      alert(`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
-  }
+    view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
 }
+     
 
 // After this, we have to edit the function that starts the game, so it includes the namespace: //
 game.start(quiz);
