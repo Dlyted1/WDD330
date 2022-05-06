@@ -23,8 +23,9 @@ const view = {
 // Game Object
 const game = {
   start(quiz){
-      this.questions = [...quiz];
       this.score = 0;
+      this.questions = [...quiz];
+      
       // main game loop
       for(const question of this.questions){
       this.question = question;
@@ -53,6 +54,7 @@ const game = {
   },
   gameOver(){
     view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
+  }
 }
      
 
