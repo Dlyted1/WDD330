@@ -127,6 +127,13 @@
 
 // 7. sort Exercise
 // Sort the people alphabetically by last name
+    const alpha = people.sort((lastOne, nextOne) => {
+      const [aLast. aFirst] = lastOne.split(', ');
+      const [bLast. bFirst] = nextOne.split(', ');
+      return aLast > bLast ? 1 : -1;
+    });
+
+    //console.log(alpha);
 
 // 8. Reduce Exercise
 // Sum up the instances of each of these
@@ -146,3 +153,13 @@
         'car',
         'truck'
       ];
+
+      const transportation = data.reduce(function(obj, item) {
+        if(!obj[item]) {
+          obj[item] = 0;
+        }
+        obj[item]++;
+        return obj;
+      }, {});
+
+      console.log(transportation);
