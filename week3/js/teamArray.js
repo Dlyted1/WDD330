@@ -99,7 +99,7 @@
 // 4. How many years did all the inventors live?
     const ordered = inventors.reduce((total, inventor) => {
       return total + (inventor.passed - inventor.year);
-    }, 0);  // the zero added bacuae the first time around in this loop total is undefined so it adds the value to add it up
+    }, 0);  // the zero added because the first time around in this loop total is undefined so it adds the value to add it up
 
     // console.log(totalYears);
 
