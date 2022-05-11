@@ -40,8 +40,12 @@ const view = {
         this.render(this.result,'');
         this.render(this.info,'');
         this.resetForm();
-    }
-    
+    },
+    teardown(){
+        this.hide(this.question);
+        this.hide(this.response);
+        this.show(this.start);
+    }   
 };
 
 // placing them inside an object called game that will be the namespace. This means that any references to the functions need to be replaced with game.function() outside the object or this.function() inside the object. //
@@ -50,6 +54,7 @@ const game = {
     start(quiz){
         this.score = 0;
         this.questions = [...quiz];
+        view.setup();
         this.ask();
   },
   ask(name){
@@ -73,11 +78,12 @@ const game = {
     } else {
         view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
     }
+    view.resetForm();
     this.ask();
   },
   gameOver(){
     view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
-    view.show(view.start);
+    view.teardown();
   }
 }
      
