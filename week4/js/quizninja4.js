@@ -26,8 +26,22 @@ const view = {
     },
     hide(element){
         element.style.display = 'none';
+    },
+    resetForm(){
+        this.response.answer.value = '';
+        this.response.answer.focus();
+    },
+    setup(){
+        this.show(this.question);
+        this.show(this.response);
+        this.show(this.result);
+        this.hide(this.start);
+        this.render(this.score,game.score);
+        this.render(this.result,'');
+        this.render(this.info,'');
+        this.resetForm();
     }
-
+    
 };
 
 // placing them inside an object called game that will be the namespace. This means that any references to the functions need to be replaced with game.function() outside the object or this.function() inside the object. //
@@ -48,17 +62,18 @@ const game = {
         this.gameOver();
     }
   },
-  check(response){
-      const answer = this.question.realName;
-      if(response === answer){
-      view.render(view.result,'Correct!',{'class':'correct'});
-      alert('Correct!');
-      this.score++;
-      view.render(view.score,this.score);
-      } else {
-      view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
-      alert(`Wrong! The correct answer was ${answer}`);
-      }
+  check(event){
+    event.preventDefault();
+    const response = view.response.answer.value;
+    const answer = this.question.realName;
+    if(response === answer){
+        view.render(view.result,'Correct!',{'class':'correct'});
+        this.score++;
+        view.render(view.score,this.score);
+    } else {
+        view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
+    }
+    this.ask();
   },
   gameOver(){
     view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
