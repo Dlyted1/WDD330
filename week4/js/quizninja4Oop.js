@@ -3,6 +3,15 @@ const quiz = [
     { name: "Superman",realName: "Clark Kent" },
     { name: "Wonder Woman",realName: "Diana Prince" },
     { name: "Batman",realName: "Bruce Wayne" },
+    { name: "The Hulk",realName: "Bruce Banner" },
+    { name: "Spider-man",realName: "Peter Parker" },
+    { name: "Cyclops",realName: "Scott Summers" }
+    { name: "Green Lantern",realName: "Hal Jordan" }
+    { name: "Catwoman",realName: "Selina Kyle" }
+    { name: "Spiderman",realName: "Peter Parker" }
+    { name: "Aquaman",realName: "Arthur Curry" }
+    { name: "Batgirl",realName: "Barbara Gordon"}
+    { name: "Shazam",realName: "Billy Batson"}
 ];
 
 // View Object
@@ -74,17 +83,16 @@ const game = {
     }
   },
   check(event){
-    event.preventDefault();
-    const response = view.response.answer.value;
+    console.log('check(event) invoked');
+    const response = event.target.textContent;
     const answer = this.question.realName;
     if(response === answer){
-        view.render(view.result,'Correct!',{'class':'correct'});
-        this.score++;
-        view.render(view.score,this.score);
+      view.render(view.result,'Correct!',{'class':'correct'});
+      this.score++;
+      view.render(view.score,this.score);
     } else {
-        view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
+      view.render(view.result,`Wrong! The correct answer was ${answer}`,{'class':'wrong'});
     }
-    view.resetForm();
     this.ask();
   },
   gameOver(){
@@ -98,4 +106,4 @@ const game = {
 // game.start(quiz);
 
 view.start.addEventListener('click', () => game.start(quiz), false);
-view.response.addEventListener('submit', (event) => game.check(event), false);
+view.response.addEventListener('click', (event) => game.check(event), false);
