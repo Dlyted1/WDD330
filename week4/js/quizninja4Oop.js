@@ -5,15 +5,31 @@ const quiz = [
     { name: "Batman",realName: "Bruce Wayne" },
     { name: "The Hulk",realName: "Bruce Banner" },
     { name: "Spider-man",realName: "Peter Parker" },
-    { name: "Cyclops",realName: "Scott Summers" }
-    { name: "Green Lantern",realName: "Hal Jordan" }
-    { name: "Catwoman",realName: "Selina Kyle" }
-    { name: "Spiderman",realName: "Peter Parker" }
-    { name: "Aquaman",realName: "Arthur Curry" }
-    { name: "Batgirl",realName: "Barbara Gordon"}
+    { name: "Cyclops",realName: "Scott Summers" },
+    { name: "Green Lantern",realName: "Hal Jordan" },
+    { name: "Catwoman",realName: "Selina Kyle" },
+    { name: "Spiderman",realName: "Peter Parker" },
+    { name: "Aquaman",realName: "Arthur Curry" },
+    { name: "Batgirl",realName: "Barbara Gordon"},
     { name: "Shazam",realName: "Billy Batson"}
 ];
 
+// Utility functions
+function random(a,b=1) {
+  // if only 1 argument is provided, we need to swap the values of a and b
+    if (b === 1) {
+      [a,b] = [b,a];
+    }
+    return Math.floor((b-a+1) * Math.random()) + a;
+  }
+  
+  function shuffle(array) {
+    for (let i = array.length; i; i--) {
+        let j = random(i)-1;
+        [array[i - 1], array[j]] = [array[j], array[i - 1]];
+    }
+  }
+  
 // View Object
 const view = {
     score: document.querySelector('#score strong'),
@@ -61,11 +77,21 @@ const view = {
 // placing them inside an object called game that will be the namespace. This means that any references to the functions need to be replaced with game.function() outside the object or this.function() inside the object. //
 // Game Object
 const game = {
-    start(quiz){
-        this.score = 0;
-        this.questions = [...quiz];
-        view.setup();
-        this.ask();
+  start(quiz){
+    console.log('start() invoked');
+    this.score = 0;
+    this.questions = [...quiz];
+    view.setup();
+    this.secondsRemaining = 20;
+    this.timer = setInterval( this.countdown , 1000 );
+    this.ask();
+  },
+  countdown() {
+    game.secondsRemaining--;
+    view.render(view.timer,game.secondsRemaining);
+      if(game.secondsRemaining <= 0) {
+        game.gameOver();
+      }
   },
   ask(name){
     console.log('ask()invoked');  
@@ -95,9 +121,11 @@ const game = {
     }
     this.ask();
   },
-  gameOver(){
+  ameOver(){
+    console.log('gameOver() invoked');
     view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
     view.teardown();
+    clearInterval(this.timer);
   }
 }
      
