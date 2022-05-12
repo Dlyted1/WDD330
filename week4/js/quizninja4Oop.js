@@ -4,7 +4,7 @@ const quiz = [
     { name: "Wonder Woman",realName: "Diana Prince" },
     { name: "Batman",realName: "Bruce Wayne" },
     { name: "The Hulk",realName: "Bruce Banner" },
-    { name: "Spider-man",realName: "Peter Parker" },
+    { name: "Flash",realName: "Wally West" },
     { name: "Cyclops",realName: "Scott Summers" },
     { name: "Green Lantern",realName: "Hal Jordan" },
     { name: "Catwoman",realName: "Selina Kyle" },
