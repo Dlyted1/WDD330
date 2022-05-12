@@ -121,7 +121,7 @@ const game = {
     }
     this.ask();
   },
-  ameOver(){
+  gameOver(){
     console.log('gameOver() invoked');
     view.render(view.info,`Game Over, you scored ${this.score} point${this.score !== 1 ? 's' : ''}`);
     view.teardown();
