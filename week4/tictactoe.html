@@ -7,62 +7,41 @@
     <title>Tic Tac Toe</title>
 </head>
 <style>
-    :root{
-        --cell-size: 100px;
-        --color: black #000;
-        --1: 10px;
-    }
-    body {
-        margin:0
-    }
+    :root {
+	--cell-size: 100px;
+	--color: #000; /* for hover */
+	--color-set: #000; /* when set */
+	--l: 10px; /* X line-width */
+}
+body {
+	margin: 0;
+}
 
-    .board {
-        width: 100vw;
-        height: 100vh;
-        display: grid;
-        justify-content: center;
-        align-content: center;
-        justify-items: center;
-        align-items: center;
-        grid-template-columns: repeat(3, auto);
-    }
+.board {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+	justify-items: center;
+	align-items: center;
+	grid-template-columns: repeat(3, auto)
+}
+.cell {
+	width: var(--cell-size);
+	height: var(--cell-size);
+	border: 1px solid black;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	cursor: pointer;
+}
 
-    .cell {
-        width: var(--cell-size);
-        height: var(--cell-size);
-        border: 1px solid black;
-        display: flex;
-        justify-items: center;
-        align-items: center;
-        position: relative;
-        cursor: pointer;
-    }
+.cell.x, .cell.circle {
+	cursor: not-allowed;
+}
 
-    .cell:nth-child(1), 
-    .cell:nth-child(2),
-    .cell:nth-child(3) {
-        border-top: none;
-    }
-    .cell:nth-child(1), 
-    .cell:nth-child(4),
-    .cell:nth-child(7) {
-        border-left: none;
-    }
-    .cell:nth-child(3), 
-    .cell:nth-child(6),
-    .cell:nth-child(9) {
-        border-right: none;
-    }
-    .cell:nth-child(7), 
-    .cell:nth-child(8),
-    .cell:nth-child(9) {
-        border-bottom: none;
-    }
-
-    cell.x, cell.circle {
-        cursor: not-allowed;
-    }
-   
 /* for cross (set) */
 .cell:not(.circle).x {
 	background: linear-gradient(to top right, transparent calc(50% - var(--l) / 2), var(--color-set) calc(50% - var(--l) / 2) calc(50% + var(--l) / 2), transparent calc(50% + var(--l) / 2)),
@@ -71,17 +50,54 @@
 	background-repeat: no-repeat;
 	background-position: center;
 }
-
-
-
-/* for circle */
-.board.circle .cell:not(.circle):not(.x):hover {	
-	background: radial-gradient(var(--color) 60%, transparent 60%);
+/* remove border for edges */
+.cell:nth-child(1), 
+.cell:nth-child(2), 
+.cell:nth-child(3) {
+	border-top: none;
 }
+
+.cell:nth-child(1), 
+.cell:nth-child(4), 
+.cell:nth-child(7) {
+	border-left: none;
+}
+
+.cell:nth-child(3), 
+.cell:nth-child(6), 
+.cell:nth-child(9) {
+	border-right: none;
+}
+
+.cell:nth-child(7), 
+.cell:nth-child(8), 
+.cell:nth-child(9) {
+	border-bottom: none;
+}
+
 
 /* for circle (set) */
 .cell:not(.x).circle {
 	background: radial-gradient(var(--color-set) 60%, transparent 60%);
+}
+
+
+  button {
+	border-radius: 10px;
+	font-size: 20px;
+	background-color: white;
+	border: 2px solid var(--color-set);
+	padding: .25em .5em;
+	cursor: pointer;
+    margin-left: 50px;
+    margin-bottom: 100px;
+  
+}
+
+button:hover {
+	background-color: var(--color-set);
+	color: white;
+	border-color: black;
 }
 
 
@@ -148,7 +164,11 @@ function handleClick(e) {
 		
 	}
 }
-   
+function isDraw() {
+  return [...cellElements].every(cell => {
+    return cell.classList.contains(player_x_class) || cell.classList.contains(player_o_class)
+  })
+}   
 function placeMark(cell, currentClass) {
 	cell.classList.add(currentClass)
 }
