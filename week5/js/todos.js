@@ -27,6 +27,32 @@ function addNewTodo(e) {
 }
 
 function createTodoItem(todo) {
+    //todo div
+    const todoDiv = document.createElement('div');
+    todoDiv.classList.add('todo');
+
+    //complete button
+    const completeBtn = document.createElement('button');
+    completeBtn.setAttribute('data-id', todo.id);
+    completeBtn.classList.add('complete-btn');
+
+    //todo content
+    const todoContent = document.createElement('div');
+    todoContent.innerText = todo.content;
+    todoContent.classList.add('todo-content');
+
+    //delete btn
+    const deleteBtn = document.createElement('button');
+    deleteBtn.setAttribute('data-id', todo.id);
+    deleteBtn.classList.add('todo-delete-btn');
+    deleteBtn.innerText = "X";
+    deleteBtn.onclick = deleteTodo;
+
+    todoDiv.appendChild(completeBtn);
+    todoDiv.appendChild(todoContent);
+    todoDiv.appendChild(deleteBtn);
+
+    return todoDiv;
 
 }
 
