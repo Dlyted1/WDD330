@@ -5,7 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>
-    <style></style>
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .todo {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            border: 1px solid lightslategray;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 10px 0px;
+        }
+
+        .completed .todo-content {
+            text-decoration: line-through;
+        }
+
+        .add-todo-wrapper {
+            width: 100%;
+            display: flex;   
+        }
+
+        #todoInput {
+            flex: 1;
+            padding: 5px;
+        }
+
+        #addBtn {
+            padding: 10px 25px;
+            margin-left: 20px;
+        }
+
+
+
+    </style>
     <script type="module" src="js/todos.js"></script>
 </head>
 <body>
@@ -16,16 +59,16 @@
         </div>
 
         <div class="todo-filters">
-            <button id="allfilter">ALL</button>
-            <button id="activefilter">Active</button>
-            <button id="completedfilter">Completed</button>
+            <button id="allfilter"type="button">ALL</button>
+            <button id="activefilter"type="button">Active</button>
+            <button id="completedfilter"type="button">Completed</button>
 
         </div>
     </div>
     
     <div class="add-todo-wrapper">
-        <input id="todoInput" type="text">
-        <button id="addBtn">Add</button>
+        <input type="text" id="todoInput" placeholder="I need to..."><button id="addBtn"type="button">Add</button>
+        
     </div>
 </div>
 

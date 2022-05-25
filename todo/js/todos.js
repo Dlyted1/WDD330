@@ -1,23 +1,24 @@
 import utils from './utils.js';
 import ls from './ls.js';
 
-// load the list
-loadTodos();
 
-// add event listeners with...
 //On click handler to button
 document.querySelector("#addBtn").onclick = addNewTodo;
+document.querySelector('activeFilter').onclick = applyFilter;
+document.querySelector('allFilter').onclick = applyFilter;
+
 // Get Input
 const input = document.querySelector('#todoInput');
 //add on Enter
 input.addEventListener('keypress', e => {
     if (e.keycode == '13') addNewTodo();
 })
-
+// load the list
+loadTodos();
 
 // step 1
 function addNewTodo(e) {
-     const todo = { id: Date.now(), content: input.ariaValueMax, completed: false };
+     const todo = { id: Date.now(), content: input.value, completed: false };
      // reset the input field
      input.value = '';
      
@@ -61,6 +62,12 @@ function createTodoItem(todo) {
 
 }
 
+// step 3
+function createTodoElement(todo) {
+
+}
+
+// step 4
 function addToList(todoDiv) {
     // Add to the document
     document.querySelector('#todos').appendChild(todoDiv);
@@ -68,13 +75,13 @@ function addToList(todoDiv) {
 }
 // step 0
 function loadTodos() {
-    //document.querySelector('#todos').innerHTML = '';
+    document.querySelector('#todos').innerHTML = '';
     const todoList = ls.getTodoList();
     // debugging
     // console.log(todoList)
 
     todoList.forEach(todo => {
-        const el = createTodoElement(todo)
+        const el = createTodoItem(todo)
         addToList(el);
     })
 }
@@ -97,20 +104,21 @@ function applyFilter(e) {
     document.querySelector('#todos').innerHTML = '';
 
     // declare variables
-    let filterdTodos = [];
+    let filteredTodos = [];
     const allTodos = ls.getTodoList();
 
     // check which filter to apply
     if (e.currentTarget.id == 'activefilter') {
         filteredTodos = utils.activeFilter(allTodos)
-
+    } else if (e.currentTarget.id == 'allFilter') {
+        filteredTodos = allTodos
     }
 
 
     // draw the list
     filteredTodos.forEach( todo => {
         const el = createTodoElement(todo)
-        addToList(el)
+        addToList(el);
     })
 
 
