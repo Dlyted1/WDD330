@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+body { 
+    background-color: rgb(155, 176, 194);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+h1 {
+    text-align: center;
+    font-family: 'Great Vibes', cursive;
+}
+
+.container {
+    max-width: 400px;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    border:2px solid rgb(72, 87, 101);
+}
+
+.todo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 1px solid lightslategray;
+    padding: 10px;
+    box-sizing: border-box;
+    
+}
+
+
+.completed .todo-content {
+    text-decoration: line-through;
+}
+
+.add-todo-wrapper {
+    width: 100%;
+    display: flex;   
+}
+
+#todoInput {
+    flex: 1;
+    padding: 5px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+
+#addBtn {
+    padding: 10px 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+

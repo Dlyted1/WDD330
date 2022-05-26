@@ -64,9 +64,9 @@ function createTodoItem(todo) {
 }
 
 // step 3
-function createTodoElement(todo) {
+//function createTodoElement(todo) {
 
-}
+//}
 
 // step 4
 function addToList(todoDiv) {
@@ -96,9 +96,10 @@ function deleteTodo(e) {
 
 }
 
-function toggleComplete(e) {
 
-}
+function toggleComplete() {
+    
+  }
 
 function applyFilter(e) {
     // clear the list
@@ -109,7 +110,7 @@ function applyFilter(e) {
     const allTodos = ls.getTodoList();
 
     // check which filter to apply
-    if (e.currentTarget.id == 'activefilter') {
+    if (e.currentTarget.id == 'activeFilter') {
         filteredTodos = utils.activeFilter(allTodos)
     } else if (e.currentTarget.id == 'allFilter') {
         filteredTodos = allTodos
