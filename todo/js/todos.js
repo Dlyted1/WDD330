@@ -1,11 +1,11 @@
 import utils from './utils.js';
 import ls from './ls.js';
 
-
+loadTodos();
 //On click handler to button
 document.querySelector("#addBtn").onclick = addNewTodo;
-document.querySelector('activeFilter').onclick = applyFilter;
-document.querySelector('allFilter').onclick = applyFilter;
+document.querySelector('#activeFilter').onclick = applyFilter;
+document.querySelector('#allFilter').onclick = applyFilter;
 
 // Get Input
 const input = document.querySelector('#todoInput');
@@ -14,11 +14,12 @@ input.addEventListener('keypress', e => {
     if (e.keycode == '13') addNewTodo();
 })
 // load the list
-loadTodos();
+
 
 // step 1
 function addNewTodo(e) {
      const todo = { id: Date.now(), content: input.value, completed: false };
+     console.log(todo.content)
      // reset the input field
      input.value = '';
      
