@@ -42,6 +42,8 @@ function createTodoItem(todo) {
     const completeBtn = document.createElement('button');
     completeBtn.setAttribute('data-id', todo.id);
     completeBtn.classList.add('complete-btn');
+    completeBtn.innerText = "✓";
+    // completeBtn.onclick = line-through;
 
     //todo content
     const todoContent = document.createElement('div');
