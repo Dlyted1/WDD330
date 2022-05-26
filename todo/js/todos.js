@@ -1,7 +1,7 @@
 import utils from './utils.js';
 import ls from './ls.js';
 
-loadTodos();
+//loadTodos();
 //On click handler to button
 document.querySelector("#addBtn").onclick = addNewTodo;
 document.querySelector('#activeFilter').onclick = applyFilter;
@@ -13,9 +13,9 @@ const input = document.querySelector('#todoInput');
 input.addEventListener('keypress', e => {
     if (e.keycode == '13') addNewTodo();
 })
+
 // load the list
-
-
+loadTodos();
 // step 1
 function addNewTodo(e) {
      const todo = { id: Date.now(), content: input.value, completed: false };
