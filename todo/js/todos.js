@@ -98,10 +98,15 @@ function deleteTodo(e) {
 
 }
 
+// toggle needs help
+function toggleComplete(e) {
+    const todoToToggle = e.currentTarget;
+	todoToToggle.completed = !todoToToggle.completed;
+	todoToToggle.element.classList.toggle('completed');
 
-function toggleComplete() {
-    
-  }
+	console.log('todoToToggle')
+}
+
 
 function applyFilter(e) {
     // clear the list
