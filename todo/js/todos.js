@@ -32,7 +32,7 @@ function addNewTodo(e) {
      loadTodos();   
 }
 
-// step 2 ? function createTodo {}
+// step 2 function createTodo {}
 function createTodoItem(todo) {
     //todo div
     const todoDiv = document.createElement('div');
@@ -42,8 +42,8 @@ function createTodoItem(todo) {
     const completeBtn = document.createElement('button');
     completeBtn.setAttribute('data-id', todo.id);
     completeBtn.classList.add('complete-btn');
-    completeBtn.innerText = "✓";
-    // completeBtn.onclick = line-through;
+    completeBtn.innerText = "✓";   
+      
 
     //todo content
     const todoContent = document.createElement('div');
@@ -65,9 +65,9 @@ function createTodoItem(todo) {
 
 }
 
-// step 3
-//function createTodoElement(todo) {
-
+// step 3 ?
+//function createTodoElement('todo') {
+//onclick = textDecoration='line-through';
 //}
 
 // step 4
@@ -121,8 +121,8 @@ function applyFilter(e) {
 
     // draw the list
     filteredTodos.forEach( todo => {
-        const el = createTodoElement(todo)
-        addToList(el);
+        const el = createTodoItem(todo)
+        addToList(el)
     })
 
 
