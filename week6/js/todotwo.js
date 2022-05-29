@@ -3,7 +3,7 @@ const clear = document.querySelector(".clear");
 const dateElement = document.getElementById("date");
 const list = document.getElementById("list");
 const input = document.getElementById("input");
-const addButton = document.querySelector('.fas fa-angle-right');
+
 
 // Class names
 const CHECK = "fa-check-circle";
@@ -18,7 +18,7 @@ let LIST, id;
 let data = localStorage.getItem("TODO");
 
 
-//check if data not empty
+//if there is data
 if(data) {
     LIST = JSON.parse(data);
     id = LIST.length; //set id to last one in list
@@ -31,20 +31,16 @@ else{
 
 //load items to users interface
 function loadList(array) {
-    array.forEach(element => {
-        add_to_do(element.name, element.id, element.done, element.trash);
+    array.forEach(function(item) {
+        addToDo(item.name, item.id, item.done, item.trash);
     });
 }
 // clear local storage
 clear.addEventListener("click", function() {
     localStorage.clear();
-    location.reload;
+    location.reload();
 });
 
-
-// add to local storage
-//below line needs to be added everywhere the LIST array is updated(copy & paste code)
-localStorage.setItem("TODO", JSON.stringify(LIST));
 
 
 //Show date
@@ -54,7 +50,7 @@ const today = new Date();
 dateElement.innerHTML = today.toLocaleDateString("en-US", options);
 
 //to do function
-function add_to_do(toDo, id, done, trash) {
+function addToDo(toDo, id, done, trash) {
     if (trash)
         return;
     // if(trash){ return; }
@@ -64,8 +60,8 @@ function add_to_do(toDo, id, done, trash) {
 
     const item = `<li class="item">
     <i class="fa ${DONE} co" job="complete" id="${id}"></i>
-    <input class="text ${LINE}" job="edit" value=${toDo}id="${id}" Blur=""">
-    <i class="fa-solid fa trash" job="delete" id="${id}"></i>
+    <p class="text ${LINE}"> ${toDo} </p>
+    <i class="far fa-trash-alt" job="delete" id="${id}"></i>
     </li>
     `;
 
@@ -75,19 +71,14 @@ function add_to_do(toDo, id, done, trash) {
 }
 
 //Add item to list
-input.addEventListener("keypress",function(even) {
-    if(event.keyCode === 13){
+document.addEventListener("keyup",function(even) {  // "keypress"
+    if(event.keyCode == 13){
     const toDo = input.value; 
 
-//Add Button Click
-//const addItem = document.getElementById("add-btn");
-//addItem.addEventListener("click", function(even){
-    //console.log("addItem button clicked")
-    //const toDo = input.value;
 
         // when input isn't empty
         if(toDo) {
-            add_to_do(toDo, id, false, false);
+            addToDo(toDo, id, false, false);
 
             LIST.push({
                 name: toDo,
@@ -99,10 +90,9 @@ input.addEventListener("keypress",function(even) {
             localStorage.setItem("TODO", JSON.stringify(LIST));
 
             id++;
+        }
             input.value = ""; 
         }       
-
-    }
 });
 
 //complete todo and toggle
@@ -126,15 +116,11 @@ list.addEventListener("click", function(event) {
     const element = event.target; //return clicked element inside list
     const elementJob = element.attributes.job.value; // complete or delete
 
-    if(elementJob === "complete") {
+    if(elementJob == "complete") {
         completeToDo(element);
-    } else if (elementJob === "delete") {
+    } else if (elementJob == "delete") {
         removeToDo(element);
     }
     //below line needs to be added everywhere the LIST array is updated(copy & paste code)
     localStorage.setItem("TODO", JSON.stringify(LIST));
 });
-
-
-
-

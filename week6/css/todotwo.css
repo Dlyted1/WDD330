@@ -53,7 +53,7 @@ h1 {
 /* ------------ content ------------ */
 .content{
     width:380px;
-    height: 350px;
+    height: 300px;
     max-height:350px;
     background-color: #FFF;
     overflow: auto;
@@ -86,7 +86,7 @@ h1 {
     cursor: pointer;
 }
 .fa-check-circle{
-    margin-left: 20px;
+    
     margin-top: 10px;
     color:#ba9621;
 }
@@ -105,18 +105,17 @@ h1 {
     text-decoration: line-through;
     color : #ccc;
 }
-/* .item i.de{
+
+.item i.fa-trash-alt{
     position: absolute;
     font-size: 25px;
     right:15px;
     top:10px;
 }
-.item i.de:hover{
+.item i.fa-trash-alt:hover{
     color:#af0000;
     cursor: pointer;
 }
-*/
-
 /* ------------ add item ------------ */
 .add-to-do{
     position: relative;
