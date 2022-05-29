@@ -53,7 +53,7 @@ h1 {
 /* ------------ content ------------ */
 .content{
     width:380px;
-    height: 300px;
+    height: 200px;
     max-height:350px;
     background-color: #FFF;
     overflow: auto;
@@ -65,9 +65,14 @@ h1 {
     padding:0;
     margin:0;
 }
+
+p.text {
+    padding: 0;
+    margin: 0;
+}
 .item{
     width:380px;
-    height: 45px;
+    height: 30px;
     min-height: 45px;
     position: relative;
     border-bottom: 1px solid rgba(0,0,0,0.1);
@@ -81,22 +86,23 @@ h1 {
     padding-left:5px;
     left:15px;
     top:10px;
+    
 }
 .item i.co:hover{
     cursor: pointer;
 }
 .fa-check-circle{
     
-    margin-top: 10px;
+    
+    margin-bottom: 5px;
     color:#ba9621;
 }
 .item p.text{
     position: absolute;
-    padding:0;
-    margin:0;
+    padding: 15px; 
     font-size: 20px;
     left:50px;
-    top:5px;
+   
     background-color: #FFF;
     max-width:285px;
 }
@@ -120,9 +126,9 @@ h1 {
 .add-to-do{
     position: relative;
     width: 360px;
-    height:40px;
+    height: 40px;
     background-color: #FFF;
-    padding: 10px;
+    padding:10px;
     border-top: 1px solid rgba(0,0,0,0.1);
 }
 .add-to-do i{
