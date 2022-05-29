@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ToDo</title>    
     <link rel="stylesheet" href="css/todotwo.css" />
-    
+   
+    <script src="https://kit.fontawesome.com/1d0b9266be.js" crossorigin="anonymous"></script>
+   
 </head>
+
 <body>
+    <h1>Daily Todo List</h1>
     <div class="container">
         <div class="header">
             <div class="clear">
@@ -19,33 +23,19 @@
 
         <div class="content">
             <ul id="list">
-                <li class="item">
-                    <i class="fa fa-circle-complete"></i>
+                
+              <!--  <li class="item">
+                    <i class="far fa-circle co" job="complete" id="0"></i>
                     <p class="text ">Feed Horses</p>
-                    <i class="fa fa-trash-o delete"></i>
+                    <i class="fa-solid fa trash de" job="delete" id="0"></i>
                 </li>
+                -->
+                 
             </ul>
-            <div class="add-item">
-                <i class="fa fa-plus-circle"></i>
+            <div class="add-to-do">
+                <i class="fas fa-angle-right"></i> 
                 <input type="text" id="input" placeholder="I need to ...">
             </div>
-        </div>
-
-    </div>
-
-
-
-
-
-
-
-        <h1>Daily Todo List</h1>
-    <div class="todos-wrapper">
-        <div id="todos">
-        </div>
-        <div class="add-todo-wrapper">
-            <input type="text" id="todoInput" placeholder="I need to..."><button id="addBtn"type="button">Add</button>
-            
         </div>
         <div class="todo-filters">
             <button id="allFilter"type="button">All</button>
@@ -53,12 +43,10 @@
             <button id="completedFilter"type="button">Completed</button>
 
         </div>
+
     </div>
+
     
-   
-</div>
-
-
-<script type="module" src="js/todotwo.js"></script>   
+<script src="js/todotwo.js"></script>   
 </body>
 </html>

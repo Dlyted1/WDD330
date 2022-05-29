@@ -67,6 +67,7 @@ function createTodoItem(todo) {
 
 // step 3 ?
 //function createTodoElement('todo') {
+
 //onclick = textDecoration='line-through';
 //}
 
