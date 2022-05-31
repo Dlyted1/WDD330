@@ -1,5 +1,5 @@
 // Immediately Invoked Function Expression or IIFE
 
-(function(){
+(function() {
     console.log("My favorite number is 7");
     })();
