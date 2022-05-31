@@ -4,5 +4,13 @@ console.log(item.length);   //Example of a property but use the  .length behind 
 var item = "Can of soda";
 console.log(item.indexOf("of")); // Method example put behind item. the 1st work not capitalized but the secondword will be camelcase - looking for precision of the word of
 
+// substring example
+//to cut off a part of the string
+var item = "Glass of water";
+console.log(item.substring(0, 6))
+
+
+
+
 
 
