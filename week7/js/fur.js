@@ -100,7 +100,7 @@ console.log(factorial(5))  //returns 120
 // document.write(factorial(5));
 
 //CALLBACKS
-//creating a Promise
+//creating a Promise example1
 const promise = new Promise( (resolve, reject) => {
     // initialization code goes here
     if (success) {
@@ -110,5 +110,56 @@ const promise = new Promise( (resolve, reject) => {
     }
 });
 
+//JavaScript PROMISE OBJECT
+   // A JavaScript Promise object contains both the producing code and calls to the consuming code:
+    ////creating a Promise example2
+   let myPromise = new Promise(function(myResolve, myReject) {
+    // "Producing Code" (May take some time)
+    
+      myResolve(); // when successful
+      myReject();  // when error
+    });
+    // "Consuming Code" (Must wait for a fulfilled Promise)
+    myPromise.then(
+      function(value) { /* code if successful */ },
+      function(error) { /* code if some error */ }
+    );
+
+      //When the producing code obtains the result, it should call one of the two callbacks:
+            // Result	Call
+               // Success	myResolve(result value)
+               // Error	    myReject(error object)  
+
+ //Async Functions
+ async function loadGame(userName) {
+
+    try {
+        const user = await login(userName);
+        const info = await getPlayerInfo (user.id);
+        // load the game using the returned info
+    }
+
+    catch (error){
+        throw error;
+    }
+}
+
+// Functions That Return Functions
+function greeter(greeting = 'Hello') {
+    return function() {
+        console.log(greeting);
+    }
+}
+
+const englishGreeter = greeter();
+englishGreeter();
+//Hello
+
+const frenchGreeter = greeter('Bonjour');
+frenchGreeter();
+//Bonjour
 
 
+const germanGreeter = greeter('Guten Tag');
+germanGreeter();
+//Guten Tag
