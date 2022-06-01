@@ -19,6 +19,8 @@
           <li><a href="http://callbackhell.com/">Prevent Spaghetti Code on Callbacks - A guide to writing asynchronous JavaScript programs</a></li>
           <li><a href="https://www.w3schools.com/js/js_function_call.asp">JavaScript Function call()</a></li>
           <li><a href="https://www.w3schools.com/js/js_promise.asp">JavaScript Promise Function</a></li>
+          <li><a href="https://www.w3schools.com/js/js_asynchronous.asp">Asynchronous JavaScript</a></li>
+          <li><a href="https://www.w3schools.com/js/js_function_closures.asp">JavaScript Closures</a></li>
           
          
    
@@ -47,8 +49,24 @@
             Rejected<br> 
             The Promise object supports two properties: state and result. While a Promise object is "pending" (working), the result is undefined. When a Promise object is "fulfilled", the result is a value. When a Promise object is "rejected", the result is an error object.
           </li>
+          <li>Asynchronous JavaScript - "I will finish later!" Functions running in parallel with other functions are called asynchronous. A good example is JavaScript setTimeout()
+          </li>
+          <li>
+            Closures are one of JavaScript’s most powerful features - JavaScript variables can belong to the local or global scope. Global variables can be made local (private) with closures. In a web page, global variables belong to the window object.<br>
+
+            Global variables can be used (and changed) by all scripts in the page (and in the window). A local variable can only be used inside the function where it is defined. It is hidden from other functions and other scripting code.<br>
+
+            Global and local variables with the same name are different variables. Modifying one, does not modify the other.<br>
+
+            A closure is formed when a function returns another function that then maintains access to any variables created in the original functions scope. 
+          </li>
+          <li>
+            Functional programming uses pure functions as the building blocks of a program. The ability to pass functions as arguments, return them from other functions, and use anonymous functions and closures, are all fundamental elements of functional programming that JavaScript excels at.
+          </li>
         </ol>
       
-   
+        <button type="button" onclick="myFunction()">Count!</button>
+
+        <p id="demo">0</p>
   </body>
 </html>
