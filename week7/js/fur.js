@@ -165,31 +165,32 @@ germanGreeter();
 //Guten Tag
 
 //CLOSURES
-   //A function can access all variables defined inside the function and a is a local variable like this:
-myFunction();
+   //A function can access all variables defined inside the function and y is a local variable like this:
+myFunctionTwo();
 
-function myFunction() {
-  let a = 4;
-  document.getElementById("demo").innerHTML = a * a;
+function myFunctionTwo() {
+  let y = 4;
+  document.getElementById("demo").innerHTML = y * y;
 }
 
-  //But a function can also access variables defined outside the function, here the b is a global variable, like this:
-let b = 4;
-myFunction();
+  //But a function can also access variables defined outside the function, here the y is a global variable, like this:
+let y = 4;
+myFunctionTwo();
 
-function myFunction() {
-  document.getElementById("demo").innerHTML = b * b;
+function myFunctionTwo() {
+document.getElementById("demo").innerHTML = y * y;
 } 
 
 //Closure Example
+
 const add = (function () {
-    let counter = 0;
-    return function () {counter += 1; return counter;}
-  })();
+let counter = 0;
+ return function () {counter += 1; return counter;}
+})();
   
-  function myFunction(){
-    document.getElementById("demo").innerHTML = add();
-  }
+  // function myFunction(){
+    // document.getElementById("demo").innerHTML = add();
+  // }
 
       //Above Example Explained: The variable add is assigned to the return value of a self-invoking function.
               //The self-invoking function only runs once. It sets the counter to zero (0), and ////returns a function expression.
@@ -197,9 +198,4 @@ const add = (function () {
               //This is called a JavaScript closure. It makes it possible for a function to have "private" variables.
               //The counter is protected by the scope of the anonymous function, and can only be changed using the add function.
 
-function reverse(string) {
-    return string.split('').reverse().join('');
-}
 
-const message = 'Hello JavaScript';
-reverse(message);
