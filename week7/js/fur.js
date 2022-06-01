@@ -173,12 +173,12 @@ function myFunction() {
   document.getElementById("demo").innerHTML = a * a;
 }
 
-  //But a function can also access variables defined outside the function, here the a is a global variable, like this:
-let a = 4;
+  //But a function can also access variables defined outside the function, here the b is a global variable, like this:
+let b = 4;
 myFunction();
 
 function myFunction() {
-  document.getElementById("demo").innerHTML = a * a;
+  document.getElementById("demo").innerHTML = b * b;
 } 
 
 //Closure Example
