@@ -6,6 +6,7 @@ import ls from './ls.js';
 document.querySelector("#addBtn").onclick = addNewTodo;
 document.querySelector('#activeFilter').onclick = applyFilter;
 document.querySelector('#allFilter').onclick = applyFilter;
+document.querySelector('#completedFilter').onclick = applyFilter;
 
 // Get Input
 const input = document.querySelector('#todoInput');
@@ -42,7 +43,9 @@ function createTodoItem(todo) {
     const completeBtn = document.createElement('button');
     completeBtn.setAttribute('data-id', todo.id);
     completeBtn.classList.add('complete-btn');
-    completeBtn.innerText = "✓";   
+    completeBtn.innerText = "✓";
+    completeBtn.onclick = toggleComplete;
+
       
 
     //todo content
@@ -101,11 +104,11 @@ function deleteTodo(e) {
 
 // toggle needs help
 function toggleComplete(e) {
-    const todoToToggle = e.currentTarget;
-	todoToToggle.completed = !todoToToggle.completed;
-	todoToToggle.element.classList.toggle('completed');
-
-	console.log('todoToToggle')
+    const btn = e.currentTarget;
+    ls.toggleComplete(btn.getAttribute('data-id'));
+    document.querySelector('#todos').innerHTML = '';
+    loadTodos();
+    
 }
 
 
