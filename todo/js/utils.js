@@ -1,4 +1,4 @@
-function activeFilter(todos) {
+function activeFilter(todos, ) {
     return todos.filter( todo => {
         return !todo.completed
     })
@@ -8,3 +8,4 @@ function activeFilter(todos) {
 export default {
     activeFilter
 }
+
