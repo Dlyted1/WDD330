@@ -19,14 +19,17 @@ window.onload = function() {
 //grabbing JSON
 var getJSON = document.getElementById("getJSON");
 var j = new XMLHttpRequest();
+
 getJSON.addEventListener("click",function() {
 
     j.addEventListener("readystatechange",function() {
+        if(this.readyState == 4 && this.status == 200) {
         var data = JSON.parse(j.responseText);
 
         for(p in data) {
             content.innerHTML += p + ": " + data[p] + '<br />';
         }
+      }
 
     });
 
