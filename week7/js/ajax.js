@@ -5,10 +5,13 @@ window.onload = function() {
     var content = document.getElementById("content");
 
     var xhr = new XMLHttpRequest();
+        getText.addEventListener("click",function() {
+            xhr.addEventListener('readystatechange',function(){
+                content.innerHTML = this.responseText;
+             });
+             xhr.open("GET","hello.txt",true);
+             xhr.send();
+        });
 
-    xhr.open("GET","hello.txt",true);
-    xhr.send();
-
-
-
+    
 };
