@@ -84,6 +84,8 @@ function addToList(todoDiv) {
 function loadTodos() {
     document.querySelector('#todos').innerHTML = '';
     const todoList = ls.getTodoList();
+    const activeList = ls.getActiveList();
+    const completedList = ls.getCompletedList();
     // debugging
     // console.log(todoList)
 
@@ -122,16 +124,21 @@ function applyFilter(e) {
 
     // check which filter to apply
     if (e.currentTarget.id == 'activeFilter') {
-        filteredTodos = utils.activeFilter(allTodos)
+        filteredTodos = utils.activeFilter(allTodos);
     } else if (e.currentTarget.id == 'allFilter') {
-        filteredTodos = allTodos
+        filteredTodos = allTodos;
+    } else if (e.currentTarget.id == 'completedFilter') {
+        filteredTodos = utils.completedFilter(allTodos);
+
     }
+
+
 
 
     // draw the list
     filteredTodos.forEach( todo => {
-        const el = createTodoItem(todo)
-        addToList(el)
+        const el = createTodoItem(todo);
+        addToList(el);
     })
 
 

@@ -1,4 +1,32 @@
 const TODO_LIST = "todoList";
+const ACTIVE_LIST = "activeList";
+const COMPLETED_LIST = "completedList";
+
+function getActiveList() {
+    let activeListString = localStorage.getItem(ACTIVE_LIST);
+
+    let activeList = [];
+
+    if (activeListString) {
+        activeList = JSON.parse(activeListString);
+    }
+
+    return activeList;
+
+} 
+
+function getcompletedList() {
+    let completedListString = localStorage.getItem(COMPLETED_LIST);
+
+    let completedList = [];
+
+    if (completedListString) {
+        completedList = JSON.parse(completedListString);
+    }
+
+    return completedList;
+
+} 
 
 function getTodoList() {
     let todoListString = localStorage.getItem(TODO_LIST);
@@ -15,51 +43,55 @@ function getTodoList() {
 
 function saveTodo(todo) {
     let todoList = getTodoList();
-
+    let activeList = getActiveList();
     todoList.push(todo);
+    activeList.push(todo);
+
 
     localStorage.setItem(TODO_LIST, JSON.stringify(todoList));
+    localStorage.setItem(ACTIVE_LIST, JSON.stringify(activeList));
 
 }
 
 function deleteTodo(id) {
     console.log(id);
+    const activeList = getActiveList();
+    const completedList = getcompletedList();
     const todoList = getTodoList();
 
-    let updatedList = todoList.filter( todo => todo.id != id);
+    let updatedcompletedList = completedList.filter( todo => todo.id != id);
+    let updatedtodoList = todoList.filter( todo => todo.id != id);
+    let updatedactiveList = activeList.filter( todo => todo.id != id);
 
-    localStorage.setItem(TODO_LIST, JSON.stringify(updatedList));
+    localStorage.setItem(TODO_LIST, JSON.stringify(updatedtodoList));
+    localStorage.setItem(ACTIVE_LIST, JSON.stringify(updatedactiveList));
+    localStorage.setItem(COMPLETED_LIST, JSON.stringify(updatedcompletedList));
 
 }
 
-function toggleComplete(todo)  {
-    const JSONtodo = JSON.parse(todo);
-    console.log(todo.id);
-    let todoList = getTodoList();
-    if (!JSONtodo.completed) {
-        JSONtodo.completed = true;
-    } else {
-        JSONtodo.completed = false;
-      
-    }
-     for( var i = 0; i < todoList.length; i++) {
-         if ( todoList[i] == JSONtodo) {
-             todoList.splice(i, 1);
-         }
-     }
+function toggleComplete(id)  {
+    let activeList = getActiveList();
+    let completedList = getcompletedList();
+   if (activeList.includes(id)) {
+    for( var i = 0; i < activeList.length; i++) {  // take out the todo
+        if ( activeList[i] == id) {
+            activeList.splice(i, 1);
+        }   
+   } 
+   completedList.push(id);
+} else if (completedList.includes(id)) {
+    for( var i = 0; i < completedList.length; i++) {  // take out the todo
+        if ( completedList[i] == id) {
+            completedList.splice(i, 1);
+        }   
+   } 
+   activeList.push(id);
+} else
+  console.log("nothing");
 
-
-    // not struck through
-     if (!JSONtodo.completed) {
-        todoList.push(JSONtodo);  
-     } else {
-         todoList.push(strikeThrough(JSONtodo));
-     }
+    localStorage.setItem(COMPLETED_LIST, JSON.stringify(completedList));
+    localStorage.setItem(ACTIVE_LIST, JSON.stringify(activeList));
     
-
-     
-
-    localStorage.setItem(TODO_LIST, JSON.stringify(todoList));
 
 }
 function strikeThrough(text) {
