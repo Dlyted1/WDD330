@@ -53,6 +53,11 @@ function createTodoItem(todo) {
     todoContent.innerText = todo.content;
     todoContent.classList.add('todo-content');
 
+    //check if complete with line through
+    if (todo.completed) {
+        todoContent.style.textDecoration = "line-through"  // can add css style here
+    }
+
     //delete btn
     const deleteBtn = document.createElement('button');
     deleteBtn.setAttribute('data-id', todo.id);
@@ -83,9 +88,9 @@ function addToList(todoDiv) {
 // step 0
 function loadTodos() {
     document.querySelector('#todos').innerHTML = '';
-    const todoList = ls.getTodoList();
-    const activeList = ls.getActiveList();
-    const completedList = ls.getCompletedList();
+    //const todoList = ls.getTodoList();
+    //const activeList = ls.getActiveList();
+    //const completedList = ls.getCompletedList();
     // debugging
     // console.log(todoList)
 
@@ -104,7 +109,7 @@ function deleteTodo(e) {
 
 }
 
-// toggle needs help
+// toggle
 function toggleComplete(e) {
     const btn = e.currentTarget;
     ls.toggleComplete(btn.getAttribute('data-id'));
