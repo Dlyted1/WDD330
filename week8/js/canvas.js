@@ -13,3 +13,14 @@ ctx.fillStyle = "rgba(0, 0, 255, 0.5)";
 //the fillRect and strokeRect methods. Both of these methods take the X and Y coordinates where you want to begin drawing the fill or the stroke, and the width and height of the rectangle.
 ctx.fillRect(10, 10, 100, 100);   
 ctx.strokeRect(10, 10, 100, 100); // the stroke and fill 10 pixels from the top and 10 pixels from the left of the canvas’s top-left corner
+
+function drawPattern() {
+    var canvas = document.getElementById("demo2");
+    var context = canvas.getContext("2d");
+    context.strokeStyle = "red";
+
+    var img = new Image(); 
+    img.src = "../images/oldbike.png";
+    img.onload = function() { 
+    };            
+}
