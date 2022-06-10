@@ -16,11 +16,11 @@ ctx.strokeRect(10, 10, 100, 100); // the stroke and fill 10 pixels from the top 
 
 function drawPattern() {
     var canvas = document.getElementById("demo2");
-    var context = canvas.getContext("2d");
-    context.strokeStyle = "red";
+    var ctx = canvas.getContext("2d");
+    ctx.strokeStyle = "red";
 
     var img = new Image(); 
-    img.src = "../images/oldbike.png";
+    img.src = "images/oldbike.png";
     img.onload = function() { 
     };            
 }
