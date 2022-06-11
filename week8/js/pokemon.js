@@ -30,3 +30,22 @@ function renderPokemon(data) {
     
         })    
 }
+
+// can use fetch and catch here (instead of async)
+function getDetails(id, url) {
+    fetch(url) 
+        .then ( res => res.json() )  // returns promise
+        .then( json => {            //returns another promise - this is data we want to do something with
+            console.log('DETAILS ', json)
+            var li = document.getElementById(id);  //grab list innerHTML
+            var div = document.createElement('div'); //put image inside here
+            div.innerHTML =  //image
+            `
+                <img src="${json.sprites.front_default}" />
+            
+            `
+            li.lastElementChild.remove();  //remove button as not needed
+            li.appendChild(div);   //append data with the image
+        })  
+
+}
