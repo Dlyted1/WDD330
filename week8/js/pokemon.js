@@ -1,3 +1,4 @@
+const btn = document.querySelector('#pokemonBtn');
 //grab the api - use try sync in case of anny errors, 
 async function getPokemon(url) {
     try {
@@ -6,7 +7,7 @@ async function getPokemon(url) {
              throw Error(response.statusText)
      }  else {    //if it is ok grab Json
              const fetchJson = await response.json();
-             //console.log(fetchJson)
+             console.log(fetchJson)
              renderPokemon(fetchJson) //define as function below
      }
 
@@ -17,6 +18,12 @@ async function getPokemon(url) {
 
 function renderPokemon(data) {
     const pokemonContainer = document.querySelector('#pokemonList'); //to enter in the DOM
+
+    if (data.next) {
+        btn.textContent = "Show more";
+        btn.setAttribute('onclick', `getPokemon('${data.next}')`)
+
+    }
 
     data.results.forEach( pokemon => {  //.results here grabed from console data array, this is what we want to show
          const listItem = document.createElement('li');  //creating list element
@@ -32,7 +39,7 @@ function renderPokemon(data) {
 }
 
 // can use fetch and catch here (instead of async)
-function getDetails(id, url) {
+ function getDetails(id, url) {
     fetch(url) 
         .then ( res => res.json() )  // returns promise
         .then( json => {            //returns another promise - this is data we want to do something with
