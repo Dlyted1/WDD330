@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+main {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+
+
+
+#shiplist td {
+  cursor: pointer;
+}
+
+#detailsbox {
+  flex: 1 0 15em;
+  padding: 1em;
+  text-align: center;
+  border: 2px solid;
+}
+
+#detailsbox dl {
+  border: 1px solid;
+  text-align: left;
+  padding-right: 20px;
+}
+
+#shiplist {
+  display: flex;
+  flex-flow: row wrap;
+  list-style-type: none;
+}
+
+#shiplist thead {
+  background-color: lightgray;
+}
+
+#shiplist tr {
+  border: 1px solid;
+  padding: 0.5em;
+  height: 44px;
+}
+#shiplist tr:nth-child(even) {
+  background-color: azure;
+}
