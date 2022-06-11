@@ -39,11 +39,13 @@ function getDetails(id, url) {
             console.log('DETAILS ', json)
             var li = document.getElementById(id);  //grab list innerHTML
             var div = document.createElement('div'); //put image inside here
-            div.innerHTML =  //image
+            /*div.innerHTML = `${pokemon.url}`*/
+            //image
+            div.innerHTML =  
             `
                 <img src="${json.sprites.front_default}" />
             
-            `
+            ` 
             li.lastElementChild.remove();  //remove button as not needed
             li.appendChild(div);   //append data with the image
         })  

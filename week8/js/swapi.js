@@ -54,14 +54,14 @@ renderShipList(results.results, shipListElement);
 // enable the next and prev buttons
 if (results.next) {
     const next = document.getElementById("next");
-    next.onclick = () => {
+    next.click = () => {
         // notice to show the next page we just re-call the showShips function with a new URL
         showShips(data.next);
       };
     }
 if (results.previous) {
     const prv = document.getElementById("prv");
-    prv.onclick = () => {
+    prv.click = () => {
         showShips(data.previous);
     };
 }
