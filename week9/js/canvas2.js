@@ -1,4 +1,5 @@
 // This canvas can now be accessed in a JavaScript program using the document.getElementById() method
+const canvasElement = document.getElementById('canvas');
 const context = canvasElement.getContext('2d');
 
 // The fill and stroke colors can be changed by assigning a CSS color
