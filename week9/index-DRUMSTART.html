@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>JS Drum Kit</title>
-  <link rel="stylesheet" href="css/drums.css">
+  <link rel="stylesheet" href="drumstyle.css">
 </head>
 <body>
 
@@ -57,9 +57,12 @@
   <audio data-key="75" src="sounds/tom.wav"></audio>
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
+<script>
+window.addEventListener('keydown', function(e) {
+  console.log(e);
 
-<script src='js/drums.js'></script>
-
+});
+</script>
 
 
 </body>
