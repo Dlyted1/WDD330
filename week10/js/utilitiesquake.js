@@ -12,11 +12,6 @@ export function getJSON(url) {
         });
 }
         
-export const getLocation = function(options) {
-    return new Promise(function(resolve, reject) {
-        navigator.geolocation.getCurrentPosition(resolve, reject, options);
-    });
-}
 
 /*Below you will find a simple "Promisefied" version of the method to return the current location of the user.*/
 export const getLocation = function (options) {
