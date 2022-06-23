@@ -1,3 +1,4 @@
+/*We will be fetching data from an external API using fetch. All of the data we will be requesting will be in the JSON format*/
 export function getJSON(url) {
     return fetch(url)
         .then(function(response) {
