@@ -5,11 +5,10 @@ export default class QuakesView {
         // console.log(quakeList);
         listElement.innerHTML = quakeList.features
             .map(quake => {
-                return `
-                <li> ${quake.properties.title}, ${new Date(
+                return `<li data-id=${quake.id}>${quake.properties.title}, ${new Date(
                     quake.properties.time
-                )} </li>`;
-            })
+                  )}</li>`;
+                })
             .join('');
     }
     renderQuake(quake, element) {
