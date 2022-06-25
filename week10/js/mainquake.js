@@ -8,8 +8,8 @@ import QuakesController from './controllerquake.js';
     // const navElement = document.getElementById('mainNav');
     // buildNavigation(navElement);
     
-    // const myQuakesController = new QuakesController('#quakeList');
-    // myQuakesController.getQuakesByRadius();
+    
 
 const myQuakesController = new QuakesController('#quakeList');
+// myQuakesController.getQuakesByRadius();
 myQuakesController.init();
