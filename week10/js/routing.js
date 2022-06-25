@@ -1,4 +1,4 @@
-import QuakesController from './controllerquakes.js';
+import QuakesController from './controllerquake.js';
 
 const routes = [
   {
@@ -39,7 +39,7 @@ async function getViewAsync(viewPath) {
 // adds a touchend event to element that will insert the view found at path into the content area of the index.html
 function addNavEventAsync(element, path, controller) {
   // adding both a touch and mouse event.  Notice the e.preventDefault(); If the touch event fires prevent default will keep the click event from firing.
-  element.addEventListener('touchend', e => {
+  element.addEventListener('click', e => {
     insertViewAsync(getViewAsync(path), controller);
     e.preventDefault();
   });
