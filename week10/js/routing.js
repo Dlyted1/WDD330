@@ -3,12 +3,12 @@ import QuakesController from './controllerquake.js';
 const routes = [
   {
     controller: new QuakesController('#quakeList'),
-    file: 'views/quakeList.html',
+    file: './quakes.html',
     label: 'Local Quakes'
   },
   {
     controller: new QuakesController('#quakeList'),
-    file: 'views/quakeList.html',
+    file: './quakes.html',
     label: 'Yellowstone Quakes'
   }
 ];

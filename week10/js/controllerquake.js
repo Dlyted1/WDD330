@@ -22,6 +22,7 @@ export default class QuakesController {
     this.parentElement = document.querySelector(this.parent);
     await this.initPos();
     this.getQuakesByRadius(100);
+    console.log("made it to the controller");
   }
   async initPos() {
     // if a position has not been set
