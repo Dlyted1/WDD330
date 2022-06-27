@@ -1,2 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+@media only screen and (min-width: 600px) {
+    header img {
+      width: 100%;
+    }
+  
+    /*the  parent container*/
+    .herodiv {
+      margin: 0 auto;
+      position: relative;
+      font-weight: 500;
+      max-height: 40%;
+    }
+}
