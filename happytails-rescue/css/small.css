@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Potta+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    line-height: 1.1em;
+  }
+  
+  body {
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+    padding: 0;
+    margin: 0;
+  }
+  
+  h1,
+  h2 {
+    font-family: 'Potta One', cursive;
+    font-size: 50px;
+
+  }
+  
+  h3,
+  h4 {
+    font-family: 'Quicksand', sans-serif;
+  }
+
+  header {
+    background-color: #CEB5A7;
+    padding: 5px 0;;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  header img {
+    height: 200px;
+    width: auto;
+  }
+
+
+  .headings {
+    display: flex;
+    flex-direction: column;
+  }
+  .headings h1 {
+    font-size: 3rem;
+    margin: 0 0 0 17px;
+  }
+  
+  .motto {
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: x-large;
+  }
+  
+
+ 
+  
