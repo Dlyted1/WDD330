@@ -13,3 +13,4 @@ import QuakesController from './controllerquake.js';
 const myQuakesController = new QuakesController('#quakeList');
 // myQuakesController.getQuakesByRadius();
 myQuakesController.init();
+// console.log("testing");
