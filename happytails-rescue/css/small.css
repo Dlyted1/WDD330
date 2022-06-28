@@ -93,6 +93,36 @@
     margin-left: 10px;
     margin-right: 10px;
 }
+
+footer {
+  max-width: 1500px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #CEB5A7;
+  padding: 0.5em;
+}
+
+.map {
+  display: none;
+}
+
+.contact {
+  line-height: 2em;
+}
+
+.social {      
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+}
+
+.social-icon {
+   display: inline-block; 
+   margin: 0 5px;
+   margin-bottom: 10px;
+}
+
+
   
  
   
