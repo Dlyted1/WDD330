@@ -94,6 +94,33 @@
     margin-right: 10px;
 }
 
+.animalCard {
+  border: 2px solid grey;
+}
+
+.animalCards-list {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.animalCard-link {
+  align-items: center;
+  border-radius: 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem;
+  width: 100%; 
+}
+
+.animalCards-img {
+  box-shadow: 0 0 50px rgb(55, 56, 58);
+}
+
+
 footer {
   max-width: 1300px;
   margin: 0 auto;
@@ -102,18 +129,16 @@ footer {
   padding: 0.5em;
 }
 
-/* .map {
-  display: none;
+.map {
+  padding: 20px;
 }
-*/
-
 .contact {
   line-height: 2em;
   font-weight: 200;
 }
 
 .contact h2 {
-  font-size: 20px;
+  font-size: 50px;
   font-weight: bold;
 }
 
