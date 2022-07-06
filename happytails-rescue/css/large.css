@@ -55,11 +55,7 @@
       column-gap: 1em;
     }
 
-    .contact h2 {
-      grid-column: 2/3;
-      font-weight: bold;
-    }
-
+    
     .map {
       grid-column-start: 1;
     }
@@ -71,7 +67,10 @@
       grid-column: 2/3;
       text-align: left;
       align-self: center;
+      font-size: 20px;
     }
+
+    
     .social {
       justify-content: left;
     }
