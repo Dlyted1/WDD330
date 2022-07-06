@@ -94,9 +94,6 @@
     margin-right: 10px;
 }
 
-.animalCard {
-  border: 2px solid grey;
-}
 
 .animalCards-list {
   display: grid;

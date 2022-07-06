@@ -35,6 +35,50 @@
 
     </div>
 
+    <form>
+        <legend> Find A Pet Near You! </legend>
+        <label for="zip">Zip</label>
+        <input type="text" name="zip" id="zip">
+        <input type="submit" id="submitZip">
+    </form>
+    
+    <section id="animal-cards">
+        <div class="animalCards">
+            <ul class="animalCards-list"> <!-- grid -->
+                <li class="animalCard">
+                    <a href="/search/dogs-for-adoption/us/fl/sebring/?distance=100" class="animalCard-link" aria-label="Browse Dogs">
+                    <img class="animalCards-img" src="images/pug.jpg" alt="Pug Dog" height="300">
+                    <span class="animalCard-title">Dogs</span>
+                    </a>
+                </li>
+                <li class="animalCard">
+                    <a href="/search/cats-for-adoption/us/fl/sebring/?distance=100" class="animalCard-link" aria-label="Browse Cats">
+                    <img class="animalCards-img" src="images/cat-talk.jpg" alt="Cat" height="300">
+                    <span class="animalCard-title">Cats</span>
+                    </a>
+                </li>
+                <li class="animalCard">
+                    <a href="/search/horses-for-adoption/us/fl/sebring/?distance=100" class="animalCard-link" aria-label="Browse Horses">
+                    <img class="animalCards-img" src="images/horse.jpg" alt="Horse" height="300">
+                    <span class="animalCard-title">Horses</span>
+                    </a>
+                </li>
+                <li class="animalCard">
+                    <a href="/search/rabbits-for-adoption/us/fl/sebring/?distance=100" class="animalCard-link" aria-label="Browse Rabbits">
+                    <img class="animalCards-img" src="images/small-pet.jpg" alt="Small Rabbit" height="300">
+                    <span class="animalCard-title">Rabbits</span>
+                    </a>
+                </li>
+            </ul>
+
+
+        </div>
+
+
+
+    </section>
+
+
 </main>
 
 <footer>
@@ -70,7 +114,8 @@
 </div>
 
 </footer>
-<script></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='script.js'></script>
 
   
 
