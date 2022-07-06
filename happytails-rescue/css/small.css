@@ -117,18 +117,17 @@
   box-shadow: 0 0 50px rgb(55, 56, 58);
 }
 
-
-footer {
-  max-width: 1300px;
-  margin: 0 auto;
-  text-align: center;
-  background-color: #CEB5A7;
-  padding: 0.5em;
-}
-
 .map {
   padding: 20px;
 }
+
+
+
+.map iframe {
+  box-shadow: 0 0 5px #333;
+  
+}
+
 .contact {
   line-height: 2em;
   font-weight: 200;
@@ -149,6 +148,14 @@ footer {
    display: inline-block; 
    margin: 10px 5px;
    
+}
+
+footer {
+  max-width: 1300px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #CEB5A7;
+  padding: 0.5em;
 }
 
 
