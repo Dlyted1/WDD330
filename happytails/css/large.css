@@ -1,0 +1,77 @@
+@media only screen and (min-width: 860px) {
+    header img {
+        height: 200px;
+        width: auto;
+        
+      }
+  
+    header,
+    footer {
+      max-width: 2500px;
+      margin: 0 auto;
+      border: 1px double;
+    }
+  
+    body {
+      max-width: 1900px;
+      margin: 0 auto;
+      border: 1px double;
+    }
+
+      .headings h1 {
+        font-size: 100px;
+        margin: 0 0 0 17px;
+        text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+      
+      
+      .motto {
+        padding-top: 10px;
+        padding-left: 20px;
+        font-size: 40px;
+        font-weight: 200;
+      }
+      .rescue-motto h2 {
+        font-size: 50px;
+        font-weight: 200;
+        text-align: center;
+        padding: 0 5px 0 5px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .rescue-motto p {
+        font-size: 25px;
+        font-weight: 200;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 1em;
+    }
+
+    
+    .map {
+      grid-column-start: 1;
+    }
+    .map iframe {
+        box-shadow: 0 0 5px #333;
+        
+    }
+    .contactInfo {
+      grid-column: 2/3;
+      text-align: left;
+      align-self: center;
+      font-size: 20px;
+    }
+
+    
+    .social {
+      justify-content: left;
+    }
+    }
