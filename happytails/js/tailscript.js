@@ -1,3 +1,6 @@
+let timer
+let deletePhotoDelay
+
 async function start()  {
     const response = await fetch("https://dog.ceo/api/breeds/list/all")
     const data = await response.json()
@@ -33,9 +36,41 @@ async function loadBreed(breed) {
 
 function createSlideshow(images) {
     // console.log(images)
-    document.getElementById("slideshow").innerHTML = `
-    <div class="slide" style="background-image: url('${images[0]}')"></div>
-    <div class="slide" style="background-image: url('${images[1]}')"></div>
-    `
+    let position = 0
+    clearInterval(timer)
+    clearTimeout(deletePhotoDelay)
+
+
+    if (images.length > 1) {
+        document.getElementById("slideshow").innerHTML = `
+        <div class="slide" style="background-image: url('${images[0]}')"></div>
+        <div class="slide" style="background-image: url('${images[1]}')"></div>
+        `
+        position += 2
+        if (images.length == 2) position = 0
+        //timer
+        timer = setInterval(nextSlide, 3000)
+
+    } else {
+        document.getElementById("slideshow").innerHTML = `
+        <div class="slide" style="background-image: url('${images[0]}')"></div>
+        <div class="slide"></div>
+        `
+    }
+
+
+
+    function nextSlide() {
+        document.getElementById("slideshow").insertAdjacentHTML("beforeend", `<div class="slide" style="background-image: url('${images[position]}')"></div> `)
+        deletePhotoDelay = setTimeout(function () {
+            document.querySelector(".slide").remove()
+
+        }, 1000)
+        if (position + 1 >= images.length) {
+            position = 0
+        } else {
+            position++
+        }
+    }
 
 }
