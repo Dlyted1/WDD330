@@ -100,27 +100,44 @@ form {
   align-items: center;
 }
 
-.animalCards-list {
-  display: grid;
-  gap: 16px;
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.animalCard-link {
-  align-items: center;
-  border-radius: 10px;
-  box-sizing: border-box;
-  cursor: pointer;
+.app {
+  height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1rem;
-  width: 100%; 
 }
 
-.animalCards-img {
-  box-shadow: 0 0 50px rgb(55, 56, 58);
+.heading {
+  text-align: center;
+  padding: 20px 0;
 }
+
+.heading h3 {
+  margin: 0 0 10px 0;
+}
+
+.heading select {
+  font-size: 1rem;
+}
+
+.slideshow {
+  flex: 1;
+  background-color: beige;
+  position: relative;
+}
+
+.slide {
+  position: absolute; 
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center center;
+  
+}
+
 
 /*
 .map {
