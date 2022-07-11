@@ -7,13 +7,18 @@
   
     header,
     footer {
-      max-width: 2500px;
+      max-width: 2100px;
       margin: 0 auto;
       border: 1px double;
     }
   
+    main {
+      max-width: 1300px;
+    }
+
+
     body {
-      max-width: 1900px;
+      max-width: 2100px;
       margin: 0 auto;
       border: 1px double;
     }
@@ -23,7 +28,7 @@
         margin: 0 0 0 17px;
         text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
       }
-      
+
       
       .motto {
         padding-top: 10px;
@@ -31,6 +36,7 @@
         font-size: 40px;
         font-weight: 200;
       }
+
       .rescue-motto h2 {
         font-size: 50px;
         font-weight: 200;
@@ -47,7 +53,9 @@
         margin-right: 10px;
     }
 
-    
+    .headingtwo select {
+        font-size: 1.5rem;
+      }
 
     .contact {
       display: grid;

@@ -40,8 +40,9 @@
   }
 
   header img {
-    height: 140px;
+    height: 100px;
     width: auto;
+    padding-right: 15px;
     
   }
 
@@ -81,10 +82,15 @@
   }
 
   main {
-  max-width: 1000px;
+  max-width: 900px;
   margin: 0 auto;
   background-color: rgb(245, 243, 232);
   padding: 0.5em;
+}
+
+img.hero-ph {
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 5px #999;
 }
   
 .rescue-motto h2 {
@@ -229,9 +235,13 @@ footer {
   margin: 0 auto;
   text-align: center;
   background-color: #CEB5A7;
-  padding: 3em;
+  padding: 2em;
 }
-
+@media only screen and (max-width: 489px) {
+  header img {
+    width: 100%;
+  }
+}
 
   
  
