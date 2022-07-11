@@ -45,6 +45,14 @@
     
   }
 
+  div.herodiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0 10px 0;
+
+  }
+
 
   .headings {
     display: flex;
@@ -107,16 +115,16 @@ form {
   flex-direction: column;
 }
 
-.heading {
+.headingtwo {
   text-align: center;
   padding: 20px 0;
 }
 
-.heading h3 {
+.headingtwo h3 {
   margin: 0 0 10px 0;
 }
 
-.heading select {
+.headingtwo select {
   font-size: 1rem;
 }
 
@@ -197,7 +205,9 @@ form {
   text-align: center;
 }
 
-
+div.contact h3 {
+  margin-bottom: 5px;
+}
 
 .social {      
   display: flex;
@@ -207,8 +217,11 @@ form {
 
 .social-icon {
    display: inline-block; 
-   margin: 10px 5px;
-   
+   margin: 10px 5px;  
+}
+
+div.social {
+  margin-top: 32px;
 }
 
 footer {
@@ -216,7 +229,7 @@ footer {
   margin: 0 auto;
   text-align: center;
   background-color: #CEB5A7;
-  padding: 0.5em;
+  padding: 3em;
 }
 
 
