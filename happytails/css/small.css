@@ -124,6 +124,7 @@ form {
   flex: 1;
   background-color: beige;
   position: relative;
+  overflow: hidden;
 }
 
 .slide {
