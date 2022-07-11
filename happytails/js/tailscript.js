@@ -39,7 +39,7 @@ async function loadBreed(breed) {
 }
 
 function createSlideshow(images) {
-    // console.log(images)
+    //console.log(images)
     let position = 0
     clearInterval(timer)
     clearTimeout(deletePhotoDelay)
@@ -47,19 +47,21 @@ function createSlideshow(images) {
 
     if (images.length > 1) {
         document.getElementById("slideshow").innerHTML = `
-        <div class="slide" style="background-image: url('${images[0]}')"></div>
-        <div class="slide" style="background-image: url('${images[1]}')"></div>
+        <div class="slide" style="background-image: url(${images[0]}); height:100%;"></div>
+        <div class="slide" style="background-image: url(${images[1]}); height:100%;"></div>
         `
         position += 2
         if (images.length == 2) position = 0
         //timer
         timer = setInterval(nextSlide, 3000)
+        console.log('finishedif')
 
     } else {
         document.getElementById("slideshow").innerHTML = `
-        <div class="slide" style="background-image: url('${images[0]}')"></div>
+        <div class="slide" style="background-image: url(${images[0]}); height:100%;"></div>
         <div class="slide"></div>
         `
+        console.log('else')
     }
 
 
