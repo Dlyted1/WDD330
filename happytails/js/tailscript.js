@@ -1,3 +1,4 @@
+
 let timer
 let deletePhotoDelay
 
