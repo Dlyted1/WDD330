@@ -46,6 +46,13 @@ body {
     width: 200px;
   }
   
+  video {
+    box-shadow: rgb(153, 153, 153) 5px 5px 5px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(204, 204, 204);
+  }
+  
   footer {
     max-width: 760px;
     margin: 0 auto;
